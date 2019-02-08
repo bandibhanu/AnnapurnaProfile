@@ -8,9 +8,10 @@
 <title>Index</title>
 </head>
 <body>
+<h1>${message}</h1>
 <h1>enter the choice</h1>
 <a href="signUp">signUp</a><br><br>
-<a href="signIn">signIn</a><br><br>
+<!-- <a href="signIn">signIn</a><br><br> -->
 </body>
 </html>
 

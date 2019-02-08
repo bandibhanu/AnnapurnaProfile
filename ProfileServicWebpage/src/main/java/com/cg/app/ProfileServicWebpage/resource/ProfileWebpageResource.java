@@ -1,11 +1,15 @@
 package com.cg.app.ProfileServicWebpage.resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-@RestController
+import com.cg.app.ProfileServicWebpage.Entity.Profile;
+
+@Controller
 public class ProfileWebpageResource {
 
 	
@@ -13,12 +17,22 @@ public class ProfileWebpageResource {
 	private RestTemplate restTemplate;
 	
 	@RequestMapping("/")
-	public String depositForm() {
+	public String depositForm()
+	{
 		return "index";	
+		
 	}
 	@RequestMapping("/signUp")
 	public String signUp() {
 		return "signUpForm";
+	}
+	
+	@RequestMapping("/signUpMethod")
+	public String signupForm(@ModelAttribute Profile profile,Model model) {
+		restTemplate.postForEntity("http://localhost:3251/profiless/",profile,null);
+		model.addAttribute("message","Success!");
+		return "signUp";
+		
 	}
 	
 	@RequestMapping("/signIn")
@@ -26,4 +40,15 @@ public class ProfileWebpageResource {
 		return "signInForm";
 	}
 	
+//	@RequestMapping("/signinMethod")
+//	public String signinForm(@ModelAttribute Profile profile,Model model) {
+//		//restTemplate.postForEntity("http://localhost:3251/profiless/profileId/phoneNumber",profile,null);
+//		restTemplate.getForEntity("http://localhost:3251/profiless/profileId/phoneNumber",profile);
+//	
+//		model.addAttribute("message","Success!");
+//		return null;
+//		
+//	}
+//
+//	
 }

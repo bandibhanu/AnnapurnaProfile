@@ -23,9 +23,9 @@ public class ProfileServiceImpl implements ProfileService{
 //	}
 
 	@Override
-	public Optional<Profile> getAccountById(int profileId) {
+	public Optional<Profile> getAccountById(int phoneNumber) {
 	
-		return repository.findById(profileId);
+		return repository.findById(phoneNumber);
 	}
 
 	@Override
@@ -36,9 +36,9 @@ public class ProfileServiceImpl implements ProfileService{
 	}
 
 	@Override
-	public void deleteById(int profileId) {
+	public void deleteById(int phoneNumber) {
 		
-		repository.deleteById(profileId);
+		repository.deleteById(phoneNumber);
 	}
 
 	@Override

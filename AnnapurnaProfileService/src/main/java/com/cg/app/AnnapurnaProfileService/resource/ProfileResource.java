@@ -34,7 +34,7 @@ public class ProfileResource {
 	{
 			service.addAccount(profile);	
 	}
-	@GetMapping("/{profileId}")
+	@GetMapping("/{phoneNumber}")
 	 public ResponseEntity<Profile> getProfileById(@PathVariable Integer profileId)
     {
         Optional<Profile> profileobject = service.getAccountById(profileId);
@@ -43,12 +43,12 @@ public class ProfileResource {
         }
         return new ResponseEntity<>(profileobject.get(), HttpStatus.OK);
     }
-	@DeleteMapping("/{profileId}")
+	@DeleteMapping("/{phoneNumber}")
 	public void deleteById(@PathVariable Integer profileId)
 	{
 		service.deleteById(profileId);
 	}
-	@PutMapping("/{profileId}")
+	@PutMapping("/{phoneNumber}")
 	public void updateProfile(@PathVariable int profileId,@RequestBody Profile profile) {
 		
 		service.updateProfile(profile);

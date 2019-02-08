@@ -1,10 +1,12 @@
 package com.cg.app.AnnapurnaProfileService.entity;
 
+import java.io.Serializable;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 
-public class Address {
+public class Address{
 
 	private int houseNumber;    
     private String streetName;
