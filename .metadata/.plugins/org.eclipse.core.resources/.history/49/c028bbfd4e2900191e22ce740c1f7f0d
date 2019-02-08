@@ -1,0 +1,30 @@
+package com.cg.app.AnnapurnaProfileService.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cg.app.AnnapurnaProfileService.entity.Profile;
+import com.cg.app.AnnapurnaProfileService.repository.ProfileRepository;
+
+
+@Service
+public class ProfileServiceImpl implements ProfileService{
+
+	@Autowired
+	public ProfileRepository repository;
+
+	@Override
+	public void postAccountDetails(Profile profile) {
+		repository.save(profile);
+
+	}
+
+	
+
+
+		
+	
+	
+	
+
+}

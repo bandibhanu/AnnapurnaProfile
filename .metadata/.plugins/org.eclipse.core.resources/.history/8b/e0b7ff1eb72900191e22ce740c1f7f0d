@@ -1,0 +1,31 @@
+package com.cg.app.AnnapurnaProfileService.resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cg.app.AnnapurnaProfileService.entity.Profile;
+import com.cg.app.AnnapurnaProfileService.service.ProfileService;
+
+@RestController
+@RequestMapping("/profiless")
+public class ProfileResource {
+
+	@Autowired
+	public ProfileService service;
+
+//	@GetMapping
+//	public String getElements()//@PathVariable Profile profile)
+//	{
+//		return "wsstefellow";
+//		
+//	}
+	@PostMapping
+	public void postElements(@RequestBody Profile profile)
+	{
+			service.postAccountDetails(profile);	
+	}
+}

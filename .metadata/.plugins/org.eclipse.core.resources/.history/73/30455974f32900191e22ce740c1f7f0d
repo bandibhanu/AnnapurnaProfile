@@ -1,0 +1,20 @@
+package com.cg.app.AnnapurnaProfileService.serviceTest;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.cg.app.AnnapurnaProfileService.service.ProfileService;
+
+public class ServiceTest {
+
+	@Autowired
+	ProfileService service;
+	@Test
+	public void testForGetAllElements() {
+		//fail("Not yet implemented");
+		
+	}
+	
+}

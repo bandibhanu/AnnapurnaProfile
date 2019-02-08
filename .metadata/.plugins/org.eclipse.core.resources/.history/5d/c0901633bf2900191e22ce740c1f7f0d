@@ -1,0 +1,14 @@
+package com.cg.app.AnnapurnaProfileService.service;
+
+import org.springframework.stereotype.Service;
+
+import com.cg.app.AnnapurnaProfileService.entity.Profile;
+
+@Service
+public interface ProfileService {
+
+	void postAccountDetails(Profile profile);
+
+	String getAccountById(int profileId);
+
+}

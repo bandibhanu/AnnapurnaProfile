@@ -1,0 +1,5 @@
+package com.cg.app.ProfileServicWebpage.Entity;
+
+public class Address {
+
+}

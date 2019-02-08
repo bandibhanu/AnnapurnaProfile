@@ -1,0 +1,5 @@
+package com.cg.app.AnnapurnaProfileService.repository;
+
+public class ProfileRepository {
+
+}

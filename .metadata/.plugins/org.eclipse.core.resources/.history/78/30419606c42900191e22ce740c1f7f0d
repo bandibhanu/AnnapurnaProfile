@@ -1,0 +1,81 @@
+package com.cg.app.AnnapurnaProfileService.resourceTest;
+
+import static org.junit.Assert.assertEquals;
+
+import java.awt.List;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.cg.app.AnnapurnaProfileService.entity.Address;
+import com.cg.app.AnnapurnaProfileService.entity.Profile;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
+public class ResourceTest {
+
+	Address addess=new Address( 111111111,
+		        "Beside bank",
+		         null,
+		         "Sathupalli",
+		         "hyderabad",
+		         "Khammam",
+		         "Telangana",
+		         "India");
+	
+	Profile profileService = new Profile(
+		     "bhanu prakash  reddy",
+		     null,
+		     "bhanu@Gai",
+		     950550877,
+		     
+//		    "address": {
+//		        "houseNumber": 111111111,
+//		        "streetName": "Beside bank",
+//		        "colony": null,
+//		        "town": "Sathupalli",
+//		        "city": "hyderabad",
+//		        "distric": "Khammam",
+//		        "state": "Telangana",
+//		        "country": "India"
+//		    },
+		     "I am Special",
+		     "1996",
+		     "M",
+		     "5"
+//		    "cart": {
+//		        "cartId": 1
+		    );
+	@Autowired
+	private TestRestTemplate testRestTemplate;
+
+	@Test
+	public void controllerIdentified() throws Exception {
+		ResponseEntity<String> responseEntity = testRestTemplate.getForEntity("/profiless", String.class);
+		System.out.println(responseEntity.getStatusCode());
+		assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
+	}
+
+	@Test
+	public void AddAccount() throws Exception {
+
+		ResponseEntity<String> responseEntity = testRestTemplate.postForEntity("/profiless", profileService,String.class);
+		System.out.println(responseEntity.getStatusCode());
+		assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
+	}
+
+	@Test
+	public void getAccount() throws Exception {
+		ResponseEntity<String> responseEntity = testRestTemplate.getForEntity("/profiless/101",String.class,profileService);
+		System.out.println(responseEntity.getStatusCode());
+		assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
+	}
+
+}

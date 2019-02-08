@@ -1,0 +1,31 @@
+package com.cg.app.AnnapurnaProfileService.serviceTest;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import javax.swing.Spring;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.cg.app.AnnapurnaProfileService.entity.Profile;
+import com.cg.app.AnnapurnaProfileService.service.ProfileService;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class ServiceTest {
+
+	@Autowired
+	ProfileService service;
+	@Test
+	public void testForGetAllElements() {
+		//fail("Not yet implemented");
+		List<Profile> pro=service.getAllElement();
+		assertEquals(true, pro.isEmpty());	
+	}
+	
+}

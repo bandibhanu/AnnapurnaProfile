@@ -1,0 +1,8 @@
+package com.cg.app.ProfileServicWebpage.resource;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ProfileWebpageResource {
+
+}

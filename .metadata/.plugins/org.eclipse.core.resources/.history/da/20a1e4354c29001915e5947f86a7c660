@@ -1,0 +1,9 @@
+package com.cg.app.AnnapurnaProfileService.service;
+
+import com.cg.app.AnnapurnaProfileService.entity.Profile;
+
+public interface ProfileService {
+
+	void postAccount(Profile profile);
+
+}

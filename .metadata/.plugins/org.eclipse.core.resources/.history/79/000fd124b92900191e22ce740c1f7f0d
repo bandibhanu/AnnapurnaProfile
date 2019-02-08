@@ -1,0 +1,47 @@
+package com.cg.app.AnnapurnaProfileService.resourceTest;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.cg.app.AnnapurnaProfileService.entity.Profile;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
+public class ResourceTest {
+
+	Profile profileService = new Profile();
+	@Autowired
+	private TestRestTemplate testRestTemplate;
+
+	@Test
+	public void controllerIdentified() throws Exception {
+		ResponseEntity<String> responseEntity = testRestTemplate.getForEntity("/profiless", String.class);
+		System.out.println(responseEntity.getStatusCode());
+		assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
+	}
+
+	@Test
+	public void AddAccount() throws Exception {
+
+		ResponseEntity<String> responseEntity = testRestTemplate.postForEntity("/profiless", profileService,
+				String.class);
+		System.out.println(responseEntity.getStatusCode());
+		assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
+	}
+
+	@Test
+	public void getAccount() throws Exception {
+		ResponseEntity<String> responseEntity = testRestTemplate.getForEntity("/profiless",String.class,profileService);//("/profiless/", profileService,String.class);
+		assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
+	}
+
+}

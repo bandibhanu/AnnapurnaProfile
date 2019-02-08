@@ -1,0 +1,30 @@
+package com.cg.app.ProfileServicWebpage.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+public class ProfileController {
+
+	@Autowired
+	private RestTemplate restTemplate;
+//	
+//	@RequestMapping("/")
+//	public String depositForm() {
+//		return "index";
+//	}
+//	@RequestMapping("/signUp")
+//	public String depositform() {
+//		return "signUpForm";
+//	}
+//	@RequestMapping("/signUpForm")
+//	public String signupForm(@ModelAttribute Profile profile,Model model) {
+//		restTemplate.postForEntity("http://localhost:3251/Profile/",profile,null);
+//		
+//		return null;
+		
+	}
+
+	
+	

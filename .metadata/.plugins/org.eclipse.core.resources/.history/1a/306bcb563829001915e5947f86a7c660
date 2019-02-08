@@ -1,0 +1,27 @@
+package com.cg.app.AnnapurnaProfileService.testresource;
+
+public class ResourceTest {
+
+	RunWith(SpringRunner.class)
+	@SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
+	public class ProfileResourceTest {
+		@Autowired
+		private TestRestTemplate testRestTemplate;
+
+//		@Test
+//		public void NoTestController() throws Exception {
+//			ProfileResource responseEntity = testRestTemplate.getForObject("/", ProfileResource.class);
+//			System.out.println(responseEntity.hashCode());
+	//
+//			//assertThat(responseEntity.getStatusCode()).isEqualByComparingTo(HttpStatus.OK);
+//			assertEquals(ProfileResource.class, responseEntity.getClass());
+	//
+//			// System.out.println(get);
+//		}
+		@Test
+		public void getFound() throws Exception{
+			ResponseEntity<String> responseEntity =testRestTemplate.getForEntity("/profiles/{profileid}", String.class);
+			assertEquals(responseEntity.getStatusCode(),HttpStatus.OK);
+		}
+	}
+}

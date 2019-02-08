@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ResourceTest" project="AnnapurnaProfileService" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cg.app.AnnapurnaProfileService.resourceTest.ResourceTest" time="0.817">
+    <testcase name="controllerIdentified" classname="com.cg.app.AnnapurnaProfileService.resourceTest.ResourceTest" time="0.543"/>
+    <testcase name="AddAccount" classname="com.cg.app.AnnapurnaProfileService.resourceTest.ResourceTest" time="0.247"/>
+    <testcase name="getAccount" classname="com.cg.app.AnnapurnaProfileService.resourceTest.ResourceTest" time="0.026"/>
+  </testsuite>
+</testrun>

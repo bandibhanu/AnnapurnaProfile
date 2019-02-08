@@ -1,0 +1,19 @@
+package com.cg.app.ProfileServicWebpage.Entity;
+
+import java.util.Random;
+
+
+
+public class Profile {
+
+	Random random = new Random();
+	private int profileId=random.nextInt();
+	private String profileImage;
+	private String name;
+	private int dateOfBirth;
+	private Address address;
+	private int cartId;
+	private String EmailId;
+	private Long phoneNumber;
+	private String gender;
+}
